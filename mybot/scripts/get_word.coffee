@@ -6,9 +6,10 @@ module.exports = (robot) ->
     num = msg.match[1]
     answer = msg.match[2]
 
-    data = robot.brain.data[num]
-    #msg.send "data[0]は、#{data[0]}"
-    #msg.send "data[1]は、#{data[1]}"
+    if robot.brain.data[num]
+      data = robot.brain.data[num]
+    else
+
     if answer == data[1]
       msg.send "正解！！"
     else
